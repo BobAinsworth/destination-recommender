@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -6,7 +7,24 @@
   <meta name="description" content="A guided questionnaire for discovering vacation destinations that fit your travel priorities.">
   <title>Vacation Destination Discovery Tool</title>
 
+  <!--
+    VACATION DESTINATION RECOMMENDER
+    Requirements: v5 (Reorganized)
+
+    Component 1: Questionnaire Content
+    Component 2: Travel Recommendation Instructions
+    Component 3: Results Presentation
+
+    Baseline: Current GitHub index.html
+    Purpose: Preserve existing website behavior while
+    documenting the three requirements components.
+
+    No API integration is included.
+  -->
+
   <style>
+    /* COMPONENT 3 — RESULTS PRESENTATION */
+
     :root {
       --bg: #f7fafc;
       --surface: #eef4ff;
@@ -78,10 +96,26 @@
       font-weight: 600;
     }
 
-    .hero-subtitle { margin: 10px 0 16px; font-size: 1.15rem; }
-    .page-subtitle, .page-tagline { margin: 6px 0; font-size: 1.12rem; line-height: 1.25; }
-    .page-intro { margin: 12px 0 5px; font-size: .98rem; }
-    .page-selection-instruction { margin: 0 0 20px; font-size: .98rem; }
+    .hero-subtitle {
+      margin: 10px 0 16px;
+      font-size: 1.15rem;
+    }
+
+    .page-subtitle, .page-tagline {
+      margin: 6px 0;
+      font-size: 1.12rem;
+      line-height: 1.25;
+    }
+
+    .page-intro {
+      margin: 12px 0 5px;
+      font-size: .98rem;
+    }
+
+    .page-selection-instruction {
+      margin: 0 0 20px;
+      font-size: .98rem;
+    }
 
     .hero-image-wrapper {
       position: relative;
@@ -103,7 +137,9 @@
       transition: opacity .6s ease-in-out;
     }
 
-    .hero-image.is-active { opacity: 1; }
+    .hero-image.is-active {
+      opacity: 1;
+    }
 
     .section-title {
       margin: 25px 0 4px;
@@ -176,7 +212,9 @@
       box-shadow: 0 0 0 1px var(--accent-soft);
     }
 
-    .opening-description-input { min-height: 88px; }
+    .opening-description-input {
+      min-height: 88px;
+    }
 
     .question-note, .summary-tip, .footer-tip {
       margin: 5px 0 0;
@@ -206,7 +244,10 @@
       white-space: nowrap;
     }
 
-    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
 
     .btn-secondary {
       background: #fff;
@@ -232,24 +273,50 @@
       outline: 0;
     }
 
-    .summary-copy-row { margin-top: 10px; }
-    .footer-tip { text-align: center; margin-top: 18px; }
+    .summary-copy-row {
+      margin-top: 10px;
+    }
+
+    .footer-tip {
+      text-align: center;
+      margin-top: 18px;
+    }
 
     @media (min-width: 768px) {
-      .page-shell { padding: 40px 24px 64px; }
-      .hero-card { padding: 32px 32px 28px; }
-      .tool-card { padding: 30px 32px 34px; }
-      .hero-title, .page-title { font-size: 2rem; }
+      .page-shell {
+        padding: 40px 24px 64px;
+      }
+
+      .hero-card {
+        padding: 32px 32px 28px;
+      }
+
+      .tool-card {
+        padding: 30px 32px 34px;
+      }
+
+      .hero-title, .page-title {
+        font-size: 2rem;
+      }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- COMPONENT 3 — RESULTS PRESENTATION -->
+  <!-- Page layout, slideshow, questionnaire display,
+       and summary controls. -->
+
   <main class="page-shell">
     <div class="stack">
+
       <section class="hero-card">
         <h1 class="hero-title">Discover Your Perfect Vacation Destination</h1>
-        <p class="hero-subtitle">In less than 10 minutes, we’ll guide you through every important detail.</p>
+
+        <p class="hero-subtitle">
+          In less than 10 minutes, we’ll guide you through every important detail.
+        </p>
 
         <div class="hero-image-wrapper" aria-label="Inspiring travel destinations">
           <img class="hero-image is-active" src="images/slide-01.jpg" alt="Travel destination 1">
@@ -268,34 +335,89 @@
       <section class="tool-card">
         <header>
           <h1 class="page-title">Vacation Destination Discovery Tool</h1>
+
           <p class="page-subtitle">Find destinations that feel made for you.</p>
-          <p class="page-tagline">Define your budget, timing, interests, comfort needs, and travel style.</p>
-          <p class="page-tagline">An active AI account is required (ChatGPT, Gemini, etc.)</p>
-          <p class="page-intro">Your selections generate a detailed prompt for your favorite AI chatbot.</p>
-          <p class="page-selection-instruction">Select one or more choices, leave blank, and use the optional write-in space whenever you wish.</p>
+
+          <p class="page-tagline">
+            Define your budget, timing, interests, comfort needs, and travel style.
+          </p>
+
+          <p class="page-tagline">
+            An active AI account is required (ChatGPT, Gemini, etc.)
+          </p>
+
+          <p class="page-intro">
+            Your selections generate a detailed prompt for your favorite AI chatbot.
+          </p>
+
+          <p class="page-selection-instruction">
+            Select one or more choices, leave blank, and use the optional write-in space whenever you wish.
+          </p>
         </header>
 
         <div id="questions"></div>
 
         <div class="actions-row">
-          <button class="btn btn-primary" id="generate" type="button">Generate Summary for AI Prompt</button>
-          <button class="btn btn-secondary" id="clear" type="button">Clear All Answers</button>
+          <button class="btn btn-primary" id="generate" type="button">
+            Generate Summary for AI Prompt
+          </button>
+
+          <button class="btn btn-secondary" id="clear" type="button">
+            Clear All Answers
+          </button>
         </div>
 
         <div class="summary-block">
-          <textarea id="summary-output" aria-label="Summary for AI prompt" placeholder="Your AI-ready travel questionnaire summary will appear here."></textarea>
+          <textarea
+            id="summary-output"
+            aria-label="Summary for AI prompt"
+            placeholder="Your AI-ready travel questionnaire summary will appear here."
+          ></textarea>
+
           <div class="summary-copy-row">
-            <button class="btn btn-primary" id="copy" type="button">Copy Summary Contents</button>
+            <button class="btn btn-primary" id="copy" type="button">
+              Copy Summary Contents
+            </button>
           </div>
-          <p class="summary-tip">Paste this into ChatGPT, Gemini, Claude, or another AI chatbot to receive your personalized destination recommendations.</p>
+
+          <p class="summary-tip">
+            Paste this into ChatGPT, Gemini, Claude, or another AI chatbot to receive your personalized destination recommendations.
+          </p>
         </div>
 
-        <p class="footer-tip">This tool offers inspiration and planning guidance. Verify current entry rules, safety information, accessibility, and health advice before booking.</p>
+        <p class="footer-tip">
+          This tool offers inspiration and planning guidance. Verify current entry rules, safety information, accessibility, and health advice before booking.
+        </p>
       </section>
+
     </div>
   </main>
 
   <script>
+
+    /*
+     ==========================================================
+     COMPONENT 1 — QUESTIONNAIRE CONTENT
+     ==========================================================
+
+     The questionnaire contains 29 questions organized into:
+
+       Your trip basics
+       Destination and travel style
+       Interests and experiences
+       Comfort and practical needs
+       Final priorities
+
+     Each question contains:
+       Question text
+       Multiple-choice selections, where applicable
+       Optional write-in
+       Supporting explanation or example
+
+     This is the current website questionnaire baseline.
+     ==========================================================
+    */
+
     const sections = [
       ["Your trip basics", [
         ["In a sentence or two, describe your ideal vacation. The following questions will help you add details.", [],
@@ -523,6 +645,68 @@
       ]]
     ];
 
+
+    /*
+     ==========================================================
+     COMPONENT 2 — TRAVEL RECOMMENDATION INSTRUCTIONS
+     ==========================================================
+
+     This is the existing AI prompt used by the website.
+
+     It instructs the AI to:
+       Review the traveler questionnaire
+       Generate a comprehensive prompt
+       Recommend five destinations
+       Explain Best Fit and Trade-offs
+       Provide comprehensive Deep Dives
+       Include photographs
+       Suggest Other Memorable Experiences
+       Provide Sample Daily Itineraries
+       Provide Next Steps
+       Offer five additional destinations when requested
+
+     The recommendation instructions are preserved.
+     ==========================================================
+    */
+
+    const intro = `Please review and understand all of the questions and answers below. Then generate a comprehensive prompt from that content. Using that comprehensive prompt, develop recommendations for five destinations that best fit the priorities of the traveler.
+
+For each recommendation, include the following sections with bold headings:
+
+**Best Fit:** Briefly explain why the destination was recommended and which traveler priorities it best fulfills.
+**Trade-offs:** Explain how this destination compares with the other recommendations.
+
+**Deep Dive:** Provide a comprehensive description of what a vacation there would be like, including things to see and do, especially activities matching the traveler’s interests. Show an image of each destination city and each important site identified in the deep dive.
+
+**Other Memorable Experiences:** Provide a bulleted list of additional things to see and do at this destination.
+**Sample Daily Itinerary:** Develop an example daily flow for the number of days at this destination.
+
+**Next Steps:** List practical steps for pursuing this destination, including checking airline sites for flights, checking travel sites for hotel choices, asking for hotel recommendations, and any other useful suggestions.
+At the very bottom, include a bold hyperlink labeled “Click here to see five more destination recommendations.” When the traveler requests it, provide five more destinations in this same chat using the same requirements and output guidance. Do not open a new chat. Do not provide them until requested.
+
+After generating the full prompt, run the prompt.
+
+TRAVELER QUESTIONNAIRE
+`;
+
+
+    /*
+     ==========================================================
+     COMPONENT 3 — RESULTS PRESENTATION AND WEBSITE LOGIC
+     ==========================================================
+
+     Creates the questionnaire display.
+     Handles summary generation.
+     Copies the generated prompt.
+     Clears questionnaire answers.
+     Controls the image slideshow.
+
+     The current copy/paste workflow is preserved.
+     ==========================================================
+    */
+
+    // Display the questionnaire.
+
     let number = 0;
     const questions = document.querySelector('#questions');
 
@@ -534,6 +718,7 @@
 
       items.forEach(([question, options, note]) => {
         number++;
+
         const group = document.createElement('div');
         group.className = 'question-group';
         group.dataset.question = number;
@@ -555,28 +740,10 @@
       });
     });
 
-    const intro = `Please review and understand all of the questions and answers below. Then generate a comprehensive prompt from that content. Using that comprehensive prompt, develop recommendations for five destinations that best fit the priorities of the traveler.
 
-For each recommendation, include the following sections with bold headings:
-
-**Best Fit:** Briefly explain why the destination was recommended and which traveler priorities it best fulfills.
-
-**Trade-offs:** Explain how this destination compares with the other recommendations.
-
-**Deep Dive:** Provide a comprehensive description of what a vacation there would be like, including things to see and do, especially activities matching the traveler’s interests. Show an image of each destination city and each important site identified in the deep dive.
-
-**Other Memorable Experiences:** Provide a bulleted list of additional things to see and do at this destination.
-
-**Sample Daily Itinerary:** Develop an example daily flow for the number of days at this destination.
-
-**Next Steps:** List practical steps for pursuing this destination, including checking airline sites for flights, checking travel sites for hotel choices, asking for hotel recommendations, and any other useful suggestions.
-
-At the very bottom, include a bold hyperlink labeled “Click here to see five more destination recommendations.” When the traveler requests it, provide five more destinations in this same chat using the same requirements and output guidance. Do not open a new chat. Do not provide them until requested.
-
-After generating the full prompt, run the prompt.
-
-TRAVELER QUESTIONNAIRE
-`;
+    // Generate Summary for AI Prompt.
+    // The summary includes all 29 questions and their answers,
+    // preceded by the recommendation instructions.
 
     document.querySelector('#generate').addEventListener('click', () => {
       let text = intro;
@@ -585,32 +752,51 @@ TRAVELER QUESTIONNAIRE
         const question = group.querySelector('.question-title').textContent;
         const picks = [...group.querySelectorAll('input:checked')].map(input => input.value);
         const written = group.querySelector('textarea').value.trim();
+
         const answer = [...picks, written].filter(Boolean).join('; ') || 'No answer provided';
+
         text += `\n${question}\nAnswer: ${answer}\n`;
       });
 
       document.querySelector('#summary-output').value = text;
+
       document.querySelector('#summary-output').scrollIntoView({
         behavior: 'smooth',
         block: 'center'
       });
     });
 
+
+    // Copy Summary Contents.
+    // Copies the complete AI prompt and questionnaire answers.
+
     document.querySelector('#copy').addEventListener('click', async () => {
       const output = document.querySelector('#summary-output');
+
       if (!output.value.trim()) return;
 
       await navigator.clipboard.writeText(output.value);
+
       const button = document.querySelector('#copy');
       const oldText = button.textContent;
+
       button.textContent = 'Copied!';
+
       setTimeout(() => button.textContent = oldText, 1600);
     });
+
+
+    // Clear All Answers.
+    // Clears selected options, write-ins, and summary text.
 
     document.querySelector('#clear').addEventListener('click', () => {
       document.querySelectorAll('input').forEach(input => input.checked = false);
       document.querySelectorAll('textarea').forEach(textarea => textarea.value = '');
     });
+
+
+    // Slideshow presentation.
+    // Retains the existing order, timing, and transitions.
 
     const slides = [...document.querySelectorAll('.hero-image')];
     let active = 0;
@@ -618,14 +804,18 @@ TRAVELER QUESTIONNAIRE
 
     const slideshow = setInterval(() => {
       slides[active].classList.remove('is-active');
+
       active = (active + 1) % slides.length;
+
       slides[active].classList.add('is-active');
+
       transitions++;
 
       if (transitions >= slides.length * 2) {
         clearInterval(slideshow);
       }
     }, 3500);
+
   </script>
 </body>
 </html>
