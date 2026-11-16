@@ -9,22 +9,16 @@
 
   <!--
     VACATION DESTINATION RECOMMENDER
-    Requirements: v5 (Reorganized)
+    Requirements version: November 16, 2026
 
-    Component 1: Questionnaire Content
-    Component 2: Travel Recommendation Instructions
-    Component 3: Results Presentation
+    Component 1 — Questionnaire Content
+    Component 2 — Travel Recommendation Instructions
+    Component 3 — Results Presentation
 
-    Baseline: Current GitHub index.html
-    Purpose: Preserve existing website behavior while
-    documenting the three requirements components.
-
-    No API integration is included.
+    Copy/paste edition. No API integration.
   -->
 
   <style>
-    /* COMPONENT 3 — RESULTS PRESENTATION */
-
     :root {
       --bg: #f7fafc;
       --surface: #eef4ff;
@@ -39,15 +33,25 @@
       --radius-lg: 22px;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+    }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
-      background: radial-gradient(circle at top, #eef2ff 0, #f7fafc 40%, #edf2ff 100%);
+      background: radial-gradient(
+        circle at top,
+        #eef2ff 0,
+        #f7fafc 40%,
+        #edf2ff 100%
+      );
       color: var(--text);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
       line-height: 1.6;
     }
 
@@ -63,7 +67,8 @@
       gap: 24px;
     }
 
-    .hero-card, .tool-card {
+    .hero-card,
+    .tool-card {
       background: var(--card);
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow);
@@ -80,7 +85,8 @@
       border-color: var(--border);
     }
 
-    .hero-title, .page-title {
+    .hero-title,
+    .page-title {
       margin: 0;
       font-size: 1.7rem;
       font-weight: 700;
@@ -89,8 +95,11 @@
       text-align: center;
     }
 
-    .hero-subtitle, .page-subtitle, .page-tagline,
-    .page-intro, .page-selection-instruction {
+    .hero-subtitle,
+    .page-subtitle,
+    .page-tagline,
+    .page-intro,
+    .page-selection-instruction {
       color: #000;
       text-align: center;
       font-weight: 600;
@@ -101,7 +110,8 @@
       font-size: 1.15rem;
     }
 
-    .page-subtitle, .page-tagline {
+    .page-subtitle,
+    .page-tagline {
       margin: 6px 0;
       font-size: 1.12rem;
       line-height: 1.25;
@@ -207,7 +217,8 @@
       background: #fff;
     }
 
-    .freeform-input:focus, #summary-output:focus {
+    .freeform-input:focus,
+    #summary-output:focus {
       border-color: var(--accent);
       box-shadow: 0 0 0 1px var(--accent-soft);
     }
@@ -216,7 +227,9 @@
       min-height: 88px;
     }
 
-    .question-note, .summary-tip, .footer-tip {
+    .question-note,
+    .summary-tip,
+    .footer-tip {
       margin: 5px 0 0;
       font-size: .86rem;
       color: var(--muted);
@@ -268,7 +281,8 @@
       padding: 10px 12px;
       border-radius: 12px;
       border: 1px solid rgba(148, 163, 184, .95);
-      font: .9rem/1.5 "SF Mono", ui-monospace, Consolas, monospace;
+      font: .9rem/1.5 "SF Mono", ui-monospace,
+        Consolas, monospace;
       background: #f9fafb;
       outline: 0;
     }
@@ -295,7 +309,8 @@
         padding: 30px 32px 34px;
       }
 
-      .hero-title, .page-title {
+      .hero-title,
+      .page-title {
         font-size: 2rem;
       }
     }
@@ -303,66 +318,106 @@
 </head>
 
 <body>
-
   <!-- COMPONENT 3 — RESULTS PRESENTATION -->
-  <!-- Page layout, slideshow, questionnaire display,
-       and summary controls. -->
 
   <main class="page-shell">
     <div class="stack">
 
       <section class="hero-card">
-        <h1 class="hero-title">Discover Your Perfect Vacation Destination</h1>
+        <h1 class="hero-title">
+          Discover Your Perfect Vacation Destination
+        </h1>
 
         <p class="hero-subtitle">
-          In less than 10 minutes, we’ll guide you through every important detail.
+          In less than 10 minutes, we’ll guide you
+          through every important detail.
         </p>
 
-        <div class="hero-image-wrapper" aria-label="Inspiring travel destinations">
-          <img class="hero-image is-active" src="images/slide-01.jpg" alt="Travel destination 1">
-          <img class="hero-image" src="images/slide-07.jpg" alt="Travel destination 7">
-          <img class="hero-image" src="images/slide-04.jpg" alt="Travel destination 4">
-          <img class="hero-image" src="images/slide-06.jpg" alt="Travel destination 6">
-          <img class="hero-image" src="images/slide-03.jpg" alt="Travel destination 3">
-          <img class="hero-image" src="images/slide-08.jpg" alt="Travel destination 8">
-          <img class="hero-image" src="images/slide-02.jpg" alt="Travel destination 2">
-          <img class="hero-image" src="images/slide-05.jpg" alt="Travel destination 5">
-          <img class="hero-image" src="images/slide-09.jpg" alt="Travel destination 9">
-          <img class="hero-image" src="images/slide-10.jpg" alt="Travel destination 10">
+        <div
+          class="hero-image-wrapper"
+          aria-label="Inspiring travel destinations"
+        >
+          <img class="hero-image is-active"
+               src="images/slide-01.jpg"
+               alt="Travel destination 1">
+          <img class="hero-image"
+               src="images/slide-07.jpg"
+               alt="Travel destination 7">
+          <img class="hero-image"
+               src="images/slide-04.jpg"
+               alt="Travel destination 4">
+          <img class="hero-image"
+               src="images/slide-06.jpg"
+               alt="Travel destination 6">
+          <img class="hero-image"
+               src="images/slide-03.jpg"
+               alt="Travel destination 3">
+          <img class="hero-image"
+               src="images/slide-08.jpg"
+               alt="Travel destination 8">
+          <img class="hero-image"
+               src="images/slide-02.jpg"
+               alt="Travel destination 2">
+          <img class="hero-image"
+               src="images/slide-05.jpg"
+               alt="Travel destination 5">
+          <img class="hero-image"
+               src="images/slide-09.jpg"
+               alt="Travel destination 9">
+          <img class="hero-image"
+               src="images/slide-10.jpg"
+               alt="Travel destination 10">
         </div>
       </section>
 
       <section class="tool-card">
         <header>
-          <h1 class="page-title">Vacation Destination Discovery Tool</h1>
+          <h1 class="page-title">
+            Vacation Destination Discovery Tool
+          </h1>
 
-          <p class="page-subtitle">Find destinations that feel made for you.</p>
-
-          <p class="page-tagline">
-            Define your budget, timing, interests, comfort needs, and travel style.
+          <p class="page-subtitle">
+            Find destinations that feel made for you.
           </p>
 
           <p class="page-tagline">
-            An active AI account is required (ChatGPT, Gemini, etc.)
+            Define your budget, timing, interests,
+            comfort needs, and travel style.
+          </p>
+
+          <p class="page-tagline">
+            An active AI account is required
+            (ChatGPT, Gemini, etc.)
           </p>
 
           <p class="page-intro">
-            Your selections generate a detailed prompt for your favorite AI chatbot.
+            Your selections generate a detailed prompt
+            for your favorite AI chatbot.
           </p>
 
           <p class="page-selection-instruction">
-            Select one or more choices, leave blank, and use the optional write-in space whenever you wish.
+            Select one or more choices, leave blank,
+            and use the optional write-in space
+            whenever you wish.
           </p>
         </header>
 
         <div id="questions"></div>
 
         <div class="actions-row">
-          <button class="btn btn-primary" id="generate" type="button">
+          <button
+            class="btn btn-primary"
+            id="generate"
+            type="button"
+          >
             Generate Summary for AI Prompt
           </button>
 
-          <button class="btn btn-secondary" id="clear" type="button">
+          <button
+            class="btn btn-secondary"
+            id="clear"
+            type="button"
+          >
             Clear All Answers
           </button>
         </div>
@@ -375,18 +430,26 @@
           ></textarea>
 
           <div class="summary-copy-row">
-            <button class="btn btn-primary" id="copy" type="button">
+            <button
+              class="btn btn-primary"
+              id="copy"
+              type="button"
+            >
               Copy Summary Contents
             </button>
           </div>
 
           <p class="summary-tip">
-            Paste this into ChatGPT, Gemini, Claude, or another AI chatbot to receive your personalized destination recommendations.
+            Paste this into ChatGPT, Gemini, Claude,
+            or another AI chatbot to receive your
+            personalized destination recommendations.
           </p>
         </div>
 
         <p class="footer-tip">
-          This tool offers inspiration and planning guidance. Verify current entry rules, safety information, accessibility, and health advice before booking.
+          This tool offers inspiration and planning guidance.
+          Verify current entry rules, safety information,
+          accessibility, and health advice before booking.
         </p>
       </section>
 
@@ -394,427 +457,821 @@
   </main>
 
   <script>
+    'use strict';
 
     /*
-     ==========================================================
+     =====================================================
      COMPONENT 1 — QUESTIONNAIRE CONTENT
-     ==========================================================
+     =====================================================
+     November 16, 2026 requirements
 
-     The questionnaire contains 29 questions organized into:
-
-       Your trip basics
-       Destination and travel style
-       Interests and experiences
-       Comfort and practical needs
-       Final priorities
-
-     Each question contains:
-       Question text
-       Multiple-choice selections, where applicable
-       Optional write-in
-       Supporting explanation or example
-
-     This is the current website questionnaire baseline.
-     ==========================================================
+     28 questions in five sections.
+     All questions support optional write-in answers.
+     Multiple-choice answers use checkboxes.
+     =====================================================
     */
 
     const sections = [
+
       ["Your trip basics", [
-        ["In a sentence or two, describe your ideal vacation. The following questions will help you add details.", [],
-          "Example: “We want a two-week trip with beautiful scenery, local food, relaxed mornings, and a few memorable adventures.”"],
 
-        ["What is the primary purpose or feel of this trip?", [
-          "Milestone celebration (Anniversary, milestone birthday, retirement, honeymoon)",
-          "Deep rest, restoration, and stress relief",
-          "Active outdoor exploration and scenery",
-          "Cultural enrichment, history, and learning",
-          "Food, culinary arts, and wine appreciation",
-          "Bucket-list sightseeing (seeing world-famous icons)",
-          "Novelty / discovering somewhere unexpected"
-        ], "A couple taking a 30th anniversary trip has radically different destination criteria than the same couple taking an annual restorative break."],
+        [
+          "In a sentence or two, describe your ideal vacation. The following questions will help you add details.",
+          [],
+          "Example: “We want a two-week trip with beautiful scenery, local food, relaxed mornings, and a few memorable adventures.”"
+        ],
 
-        ["Who will be traveling?", [
-          "Solo traveler", "Couple / partners", "Number of adults",
-          "Friends / adult group", "Family with young children",
-          "Family with teens", "Multigenerational family",
-          "Organized group", "Traveling with pets", "Couples traveling together"
-        ], "Example: “Two active retirees traveling together.”"],
+        [
+          "What is the primary purpose or feel of this trip?",
+          [
+            "Rest and restoration: slow pace, stress relief",
+            "Active and outdoors: scenery, movement, fresh air",
+            "Culture and discovery: history, art, learning",
+            "Food and wine: culinary experiences at the center",
+            "Bucket-list highlights: seeing the world-famous icons",
+            "Something new and different: off the usual path",
+            "Time together: reconnecting with a partner, family, or friends",
+            "Milestone celebration (Anniversary, milestone birthday, retirement, honeymoon) - Comment below."
+          ],
+          "Anything special about this trip, such as an interest you want built around."
+        ],
 
-        ["Where will you be starting your trip?", [
-          "United States / Canada", "Departure airport (write-in)",
-          "Mexico / Central America", "South America", "Europe",
-          "Africa / Middle East", "Asia", "Australia / New Zealand / Pacific"
-        ], "Include your home city or preferred departure airport below; it affects costs and travel time."],
+        [
+          "Who will be traveling?",
+          [
+            "Solo traveler",
+            "Couple / partners",
+            "Two or more couples traveling together",
+            "Friends / adult group",
+            "Family with children under 12",
+            "Family with teens",
+            "Multigenerational family",
+            "Adult family members (siblings, parents with adult children)",
+            "Organized group",
+            "Traveling with pets (write-in below)"
+          ],
+          "Example: Tell us about your group “Two active retirees traveling together.”"
+        ],
 
-        ["What is your total vacation budget including airfare, lodging, food, etc?", [
-          "Under $1,500", "$1,500–$3,000", "$3,000–$5,000",
-          "$5,000–$8,000", "$8,000–$12,000", "$12,000–$18,000",
-          "$18,000–$25,000", "Over $20,000", "Flexible / not sure"
-        ], "Estimate for your whole travel party, including flights, accommodations, food, activities, and ground transportation. Specify currency if not USD."],
+        [
+          "Where will you be starting your trip?",
+          [
+            "Home city or departure airport (write-in, indicate “Preferred”)",
+            "Alternate airport if you wish (write-in, indicate “Alternate”)"
+          ],
+          "Include your home city or preferred departure airport; it affects costs and travel time."
+        ],
 
-        ["How long would you like to be away?", [
-          "Weekend / 2–3 nights", "4–6 nights", "7–10 nights", "11–14 nights",
-          "15–21 nights", "3–4 weeks", "More than a month",
-          "Flexible depending on travel time/distance"
-        ], "Example: “About 12 nights, including travel days.”"],
+        [
+          "is your approximate total budget for the whole travel party including airfare, lodging, food, etc?",
+          [
+            "Write-in a specific amount (write-in below)",
+            "Under $1,500",
+            "$1,500–$3,000",
+            "$3,000–$5,000",
+            "$5,000–$8,000",
+            "$8,000–$12,000",
+            "$12,000–$18,000",
+            "$18,000-25,000",
+            "Over $25,000",
+            "Flexible / not sure"
+          ],
+          "Estimate for your whole travel party, including flights, accommodations, food, activities, and ground transportation. Specify currency if not USD."
+        ],
 
-        ["When would you like to travel?", [
-          "Specific month", "Specific dates (write-in)",
-          "January–March", "April–June", "July–September", "October–December",
-          "Shoulder season (balance of good weather, fewer crowds, better prices)",
-          "School-holiday period", "Off-season / shoulder season", "Anytime / flexible"
-        ], "Enter dates or months, plus how flexible they are. Multiple seasons may be selected."],
+        [
+          "How long would you like to be away from home? Count total nights away, including travel days.",
+          [
+            "Specific number of nights (write-in)",
+            "Weekend (2-3 nights)",
+            "4-6 nights",
+            "7-10 nights",
+            "11-14 nights",
+            "15-21 nights",
+            "22-30 nights",
+            "More than a month",
+            "Flexible, recommend what works best"
+          ],
+          "Example: “12 nights, including travel days.”"
+        ],
 
-        ["How far are you willing to travel?", [
-          "Within a few hours of home", "Short flight / roughly 1–4 hours",
-          "Medium flight / roughly 4–8 hours", "Long-haul flight/overnight / 8+ hours",
-          "Any distance if worthwhile", "Prefer no flying",
-          "We’ll be traveling by car", "We’ll be traveling by train"
-        ], "Example: “A long flight is fine if we stay two weeks.”"],
+        [
+          "When would you like to travel?",
+          [
+            "Specific month (write-in)",
+            "Specific dates (write-in)",
+            "January–March",
+            "April–June",
+            "July–September",
+            "October–December",
+            "Shoulder season (balance of good weather, fewer crowds, better prices)",
+            "School-holiday period (write-in)",
+            "Off-season",
+            "I’m flexible"
+          ],
+          "Enter dates or months, plus how flexible they are. Multiple seasons may be selected."
+        ],
 
-        ["Which regions interest you most?", [
-          "Within my own country", "Canada / United States", "Mexico & Central America",
-          "Caribbean", "South America", "Western Europe", "Northern / Eastern Europe",
-          "Southern / Mediterranean Europe", "Middle East & North Africa",
-          "Sub-Saharan Africa", "East Asia (Japan, Korea, Taiwan)", "Southeast Asia",
-          "South Asia", "Australia, New Zealand & South Pacific", "Open to travel anywhere"
-        ], "List countries you especially want to visit."],
+        [
+          "How far are you willing to travel?",
+          [
+            "Short flight (up to 4 hours)",
+            "Medium flight (4-8 hours)",
+            "Long-haul flight (8+ hours)",
+            "Drive up to # of hours below (write-in)",
+            "We’ll be traveling by car – road trip.",
+            "We’ll be traveling by train",
+            "Open to any distance if the trip is worthwhile",
+            "No flying (car, train, or other ground travel only)",
+            "Any distance if worthwhile"
+          ],
+          "Example: “A long flight is fine if we stay two weeks.”"
+        ],
 
-        ["Which popular destinations should we explicitly avoid or leave out?", [
-          "Places I have already visited extensively (please list below)",
-          "Overly tourist-heavy / crowded hotspots (e.g., Venice, Santorini, Times Square)",
-          "Long-haul flights / destinations with dramatic time zone changes (>6 hour jet lag)",
-          "Destinations requiring visas, complex entry protocols, or vaccinations",
-          "Developing nations or areas with developing infrastructure"
-        ], "List specific cities, islands, or countries you do NOT want recommended."],
+        [
+          "Which regions interest you most?",
+          [
+            "Within my own country (write-in)",
+            "List specific country or countries (write-in)",
+            "List specific state or states (write-in)",
+            "List specific city or cities (write-in)",
+            "United States (including Alaska and Hawaii)",
+            "Canada",
+            "Mexico & Central America",
+            "Caribbean",
+            "South America",
+            "UK & Ireland",
+            "Western Europe",
+            "Southern / Mediterranean Europe",
+            "Nordic countries",
+            "Central & Eastern Europe",
+            "Middle East & North Africa",
+            "Sub-Saharan Africa",
+            "East Asia (Japan, Korea, Taiwan)",
+            "Southeast Asia",
+            "South Asia & Indian Ocean islands",
+            "Australia, New Zealand & South Pacific",
+            "Open to anywhere"
+          ],
+          "You may wish to list countries or cities you don’t want to visit."
+        ],
 
-        ["What are your luggage and transit handling preferences?", [
-          "Carry-on luggage only; highly mobile",
-          "Full-size checked bags; require luggage assistance or door-to-door car/driver service",
-          "Happy to change hotels every 2–3 days to see more territory",
-          "Prefer 4 to 7 nights minimum per base to unpack once and explore",
-          "Prefer no more than one flight layover each way"
-        ], "Describe any luggage, hotel-change, or transfer preferences."]
+        [
+          "Is there anything we should leave out of our recommendations?",
+          [
+            "Places I have already visited extensively (please list below)",
+            "Places you don’t want to visit (please list below)",
+            "Very crowded tourist hotspots",
+            "Places with complicated entry requirements (visas, vaccinations)",
+            "Places with limited healthcare or unreliable infrastructure",
+            "Places with active travel advisories",
+            "Cruise-ship or resort-heavy destinations"
+          ],
+          "If the traveler has already been there three times or specifically dislikes them, the recommendation is wasted."
+        ],
+
+        [
+          "How do you prefer to handle luggage?",
+          [
+            "Carry-on luggage only; highly mobile",
+            "Full-size or multiple checked bags",
+            "Require luggage assistance or door-to-door car/driver service",
+            "I’m traveling with special equipment (bikes, golf clubs, skis, medical gear) – write-in below"
+          ],
+          "Anything about carrying limits, such as stairs, cobblestones, or trains with no elevators."
+        ]
+
       ]],
 
       ["Destination and travel style", [
-        ["What type of setting appeals to you?", [
-          "Beach / island / coast", "Mountain / alpine scenery", "Countryside / villages",
-          "Major cities", "Small historic towns", "Lakes / rivers",
-          "Desert / dramatic landscapes", "Forest / wilderness",
-          "Lakeside / mountain lakes", "Wine country / rolling vineyard valleys",
-          "Coastal cliffs / dramatic seascapes"
-        ], "Select several for a mixed-setting trip."],
 
-        ["What climate would you enjoy?", [
-          "Warm and sunny", "Hot / tropical", "Mild / temperate", "Cool and crisp",
-          "Cold / snowy", "Dry climate", "Humidity is fine", "Cold / snowy / winter sports",
-          "Dealbreaker: No extreme humidity", "Dealbreaker: No intense heat",
-          "No strong preference"
-        ], "Example: “Prefer daytime highs around 65–80°F; avoid humid heat.”"],
+        [
+          "What type of setting appeals to you?",
+          [
+            "Major cities",
+            "Small historic towns",
+            "Countryside / villages / farmland",
+            "Wine country / vineyard valleys",
+            "Beaches / islands",
+            "Dramatic coastline / seascapes",
+            "Lakes / rivers",
+            "Mountains / alpine scenery",
+            "Forests / wilderness / national parks",
+            "Desert / canyons / dramatic landscapes",
+            "Tropical / rainforest",
+            "Avoiding crowds is important"
+          ],
+          "Select several for a mixed-setting trip."
+        ],
 
-        ["How important is avoiding crowds?", [
-          "Quiet / secluded destinations", "Smaller towns and less-visited areas",
-          "Strictly off-the-beaten-path (avoid major tourist hubs)",
-          "Lesser-known alternatives to famous destinations",
-          "Popular places during quieter periods", "Mix of famous sights and quieter stops",
-          "Iconic major sights are worth the crowds and lines",
-          "Vibrant, high-energy city atmosphere preferred",
-          "Busy city energy is welcome", "Crowds are not an issue"
-        ], "Mention whether festivals, major holidays, or tourist crowds are dealbreakers."],
+        [
+          "What climate would you enjoy?",
+          [
+            "Warm and sunny",
+            "Hot / tropical",
+            "Mild / temperate",
+            "Cool and crisp",
+            "Cold / snowy",
+            "Dry climate",
+            "Humidity is fine",
+            "Cold / snowy / winter sports",
+            "Dealbreaker: No extreme humidity",
+            "Dealbreaker: No intense heat",
+            "No strong preference"
+          ],
+          "Example: “Prefer daytime highs around 65–80°F; avoid humid heat.”"
+        ],
 
-        ["What pace would you prefer?", [
-          "Very relaxed / plenty of downtime", "Mostly relaxed with occasional outings",
-          "Balanced sightseeing and relaxation", "Active days with full itineraries",
-          "Fast-paced / see as much as possible", "Varies by day"
-        ], "Example: “One main activity per day with leisurely meals.”"],
+        [
+          "What pace would you prefer?",
+          [
+            "Very relaxed: one thing at most per day, plenty of downtime",
+            "Relaxed: a morning or afternoon outing most days, with free time",
+            "Balanced: a main activity each day plus time to unwind",
+            "Active: full days with several stops, with an occasional lighter day",
+            "Fast-paced: see as much as possible, early starts are fine",
+            "A mix: some slow days, some full days"
+          ],
+          "Example: “Write about your rhythm. One main activity per day with leisurely meals.”"
+        ],
 
-        ["What style of trip sounds best?", [
-          "Stay in one place", "Two or three home bases", "Multi-city / multi-stop itinerary",
-          "Hub-and-spoke (single central hotel base with guided or day trips)",
-          "Scenic road trip", "Point-to-point road trip", "Guided group tour",
-          "Rail journey", "Ocean cruise", "River cruise",
-          "Small-ship / catamaran charter", "Combination / undecided"
-        ], "How many nights minimum do you prefer to stay at each stop?"],
+        [
+          "What style of trip sounds best?",
+          [
+            "Stay in one place",
+            "Multi-city / multi-stop itinerary. See next question for # of stops.",
+            "Hub-and-spoke (single central hotel base with guided or day trips)",
+            "Road trip loop",
+            "Road trip one-way",
+            "Guided group tour",
+            "Rail journey",
+            "Ocean cruise",
+            "River cruise",
+            "Small-ship / catamaran charter",
+            "Combination (write-in)",
+            "Undecided"
+          ],
+          "Example: “One home base with day trips, then a short stop elsewhere. Prefer trains.”"
+        ],
 
-        ["What kinds of accommodations do you prefer?", [
-          "Comfortable midrange hotel", "4-star upscale comfort",
-          "5-star luxury / full-service resorts", "Character boutique hotels / historic inns",
-          "Vacation rental / apartment / villa", "All-inclusive resort",
-          "Bed and breakfast / country estate / agriturismo", "Camping / glamping / Eco-lodge",
-          "Cruise ship / other", "Clean budget / practical hotels"
-        ], "Add requirements such as elevator, air conditioning, kitchen, or adjoining rooms."]
+        [
+          "What kinds of accommodation do you prefer?",
+          [
+            "Comfortable standard hotel",
+            "Upscale hotel",
+            "Luxury hotel / resort",
+            "Character boutique hotels / historic inns",
+            "Vacation rental / apartment / villa",
+            "Clean budget / practical hotel",
+            "All-inclusive resort",
+            "Bed and breakfast",
+            "Hostels / guesthouses / pensions",
+            "Extended-stay suites",
+            "Camping / glamping / Eco-lodge",
+            "Cruise ship",
+            "Other (write-in)",
+            "No strong preference / varies by destination"
+          ],
+          "Add requirements such as elevator, air conditioning, kitchen, or adjoining rooms."
+        ],
+
+        [
+          "For Multi-day trips, how many different overnight locations do you want to stay in?",
+          [
+            "One",
+            "Two",
+            "Three",
+            "Four",
+            "Five",
+            "Six",
+            "Seven",
+            "Eight",
+            "Nine",
+            "Ten",
+            "If you have a preferred minimum # of nights stay at each location (write-in)",
+            "If you have a preferred maximum # of nights stay at each location (write-in)"
+          ],
+          "If you’re flexible, please indicate so in the write-in."
+        ]
+
       ]],
 
       ["Interests and experiences", [
-        ["What are your strongest sightseeing interests?", [
-          "History / archaeology", "Art / museums / architecture",
-          "Culture / local traditions", "Nature / scenery", "Wildlife / birdwatching",
-          "Gardens / parks", "Shopping / design", "Famous landmarks",
-          "UNESCO World Heritage sites", "Scenic rail / boat sightseeing",
-          "Local markets & artisan crafts"
-        ], "Choose as many as apply; note any must-see interests."],
 
-        ["Which food and drink experiences appeal to you?", [
-          "Regional restaurants / local specialties", "Street food / markets",
-          "Fine dining", "Wine tasting / vineyards", "Breweries / distilleries",
-          "Cooking classes / food tours", "Vegetarian / special-diet friendly",
-          "Farm-to-table / hyper-local dining", "Casual tavernas / bistros / pubs",
-          "Food is not a major factor"
-        ], "Mention food allergies, dietary restrictions, or dining budget."],
+        [
+          "What are your strongest sightseeing interests?",
+          [
+            "History / archaeology",
+            "Art / museums / architecture",
+            "Culture / local traditions",
+            "Nature / scenery",
+            "Wildlife / birdwatching",
+            "Gardens / parks",
+            "Shopping / design",
+            "Famous landmarks",
+            "Food / culinary experiences",
+            "Religious / spiritual sites",
+            "Performing arts / music / festivals",
+            "Villages / small-town exploration",
+            "Local markets & artisan crafts",
+            "Military / modern history",
+            "Beaches / coastal scenery",
+            "Scenic rail / boat sightseeing"
+          ],
+          "Choose as many as apply; note any must-see interests."
+        ],
 
-        ["Which outdoor activities interest you?", [
-          "Easy nature walks", "Moderate hiking", "Challenging hikes / trekking",
-          "Cycling / e-biking", "Swimming / snorkeling", "Boating / kayaking / sailing",
-          "Skiing / winter sports", "Scenic drives / wildlife watching",
-          "Gentle recreational cycling / e-biking (bike paths)",
-          "Road cycling / long-distance touring",
-          "Kayaking / paddleboarding / calm water recreation",
-          "Golf / tennis / pickleball", "Little or no outdoor activity"
-        ], "Describe your comfort level and whether you need guided activities or equipment rentals."],
+        [
+          "Which food and drink experiences appeal to you?",
+          [
+            "Regional restaurants / local specialties",
+            "Street food / markets",
+            "Fine dining",
+            "Wine tasting / vineyards",
+            "Breweries / distilleries",
+            "Cooking classes / food tours",
+            "Vegetarian / special-diet friendly",
+            "Farm-to-table / hyper-local dining",
+            "Casual tavernas / bistros / pubs",
+            "Coffee / tea houses",
+            "Bakeries / pastries / sweets",
+            "Seafood / fish markets",
+            "Food is not a major factor",
+            "Allergy / dietary restrictions (write-in)"
+          ],
+          "Mention food allergies, dietary restrictions, or dining budget."
+        ],
 
-        ["What special experiences would make this trip memorable?", [
-          "Local festivals / music / performances", "Spa / wellness / relaxation",
-          "Romantic experiences", "Photography opportunities",
-          "Adventure / adrenaline activities", "Learning / workshops",
-          "Spiritual / reflective experiences", "Family-friendly attractions",
-          "Scenic drives / panoramic trains", "Private boat charter / sunset sailing",
-          "Private guided insider tours (avoiding lines)", "Unusual / once-in-a-lifetime moments"
-        ], "Example: “An intimate concert, a cooking lesson, and sunrise landscape photography.”"]
+        [
+          "Which outdoor activities interest you?",
+          [
+            "Easy nature walks",
+            "Moderate hiking",
+            "Challenging hikes / trekking",
+            "Birdwatching walks / guided nature outings",
+            "Wildlife watching",
+            "Swimming / snorkeling",
+            "Boating / sailing",
+            "Skiing / snowboarding / winter sports",
+            "Scenic drives",
+            "Surfing / kitesurfing / windsurfing",
+            "Kayaking / paddleboarding / calm water recreation",
+            "Beach time / relaxing by water",
+            "Recreational cycling / e-biking",
+            "Road cycling / long-distance touring",
+            "Mountain / gravel biking",
+            "Fishing",
+            "Golf / tennis / pickleball",
+            "Little or no outdoor activity"
+          ],
+          "Describe your comfort level and whether you need guided activities or equipment rentals."
+        ],
+
+        [
+          "What special experiences would make this trip memorable?",
+          [
+            "Local festivals / music / performances",
+            "Spa / wellness / relaxation",
+            "Romantic experiences",
+            "Photography opportunities",
+            "Adventure / adrenaline activities",
+            "Learning / workshops",
+            "Spiritual / reflective experiences",
+            "Family-friendly attractions",
+            "Scenic drives / panoramic trains",
+            "Private boat charter / sunset sailing",
+            "Private guided insider tours (avoiding lines)",
+            "Unusual / once-in-a-lifetime moments"
+          ],
+          "Example: “An intimate concert, a cooking lesson, and sunrise landscape photography.”"
+        ]
+
       ]],
 
       ["Comfort and practical needs", [
-        ["How much walking and physical activity is comfortable?", [
-          "Minimal walking / frequent rests", "Short, mostly flat walks",
-          "Several miles on level terrain", "Moderate hills and stairs are fine",
-          "Long / strenuous days are fine", "Varies by traveler"
-        ], "Specify distances, stairs, uneven streets, or elevation that could be difficult."],
 
-        ["Do you have any mobility or accessibility requirements?", [
-          "Step-free access / elevators", "Wheelchair-accessible lodging / transport",
-          "Avoid steep slopes / cobblestones", "Accessible bathroom / walk-in shower",
-          "Need nearby parking / short transfers", "Need extra rest breaks",
-          "Elevator mandatory (cannot carry bags up stairs)",
-          "Walk-in shower preferred over tub-shower combo",
-          "No special requirements", "Prefer to explain below"
-        ], "Use the write-in field for non-negotiable needs. Accessible features must be verified for a specific destination or property."],
+        [
+          "How much walking and physical activity is comfortable?",
+          [
+            "Very light: under 1 mile (1.5 km) or about 30 minutes total, with frequent rests",
+            "Light: 1-2 miles (1.5-3 km) on mostly flat, even ground",
+            "Moderate: 2-4 miles (3-6 km) with a few gentle slopes or some stairs",
+            "Active: 4-6 miles (6-10 km), including hills and stairs, about 3-4 hours on my feet",
+            "Strenuous: 6+ miles (10+ km), steep or uneven terrain, full days of activity are fine",
+            "Not sure / want your recommendation"
+          ],
+          "Specify distances, stairs, uneven streets, or elevation that could be difficult."
+        ],
 
-        ["How comfortable are you with transportation logistics?", [
-          "Prefer direct flights / simple transfers", "Comfortable with one connection",
-          "Prefer trains / public transit", "Comfortable driving a rental car in foreign countries",
-          "Comfortable driving, but automatic transmission only / prefer easy highway driving",
-          "No driving: Prefer trains, express coaches, and walkable towns",
-          "Prefer private transfers / a driver / taxis",
-          "Prefer seamless public transit (metro, local bus, tram)",
-          "Comfortable navigating independently", "Prefer tour transport / fully arranged travel"
-        ], "Mention concerns about long drives, unfamiliar roads, ferries, or luggage transfers."],
+        [
+          "Do you have any mobility or accessibility requirements?",
+          [
+            "Step-free access or elevator required",
+            "Ground-floor room required",
+            "Must avoid steep slopes, cobblestones, or uneven paths",
+            "Need short transfers and nearby drop-off",
+            "Walk-in shower preferred over tub-shower combo",
+            "Accessible bathroom required (roll-in shower, grab bars)",
+            "I use a mobility aid (cane, walker, scooter, wheelchair)",
+            "Medical, equipment, or service animal needs",
+            "No special requirements",
+            "Other (describe below)"
+          ],
+          "Use the write-in field for non-negotiable needs. You must verify accessible features for a specific destination or property."
+        ],
 
-        ["How independent would you like the trip to be?", [
-          "Fully self-planned / independent", "Independent with a few guided tours",
-          "Local guides for key experiences", "Mostly prearranged itinerary",
-          "Partially packaged (hotels, transfers, trains booked; days open)",
-          "Fully guided escorted group tour", "Full ocean or river cruise", "No strong preference"
-        ], "Example: “Explore independently but book guides for historical sites.”"],
+        [
+          "How comfortable are you with transportation logistics?",
+          [
+            "Direct flights only",
+            "One airline connection is fine",
+            "Multiple airline connections or long travel days are fine",
+            "Prefer trains, coaches, and public transit",
+            "Prefer private transfers, a driver, or taxis",
+            "I’m comfortable driving a rental car",
+            "Automatic transmission only",
+            "Ferries and boats are fine",
+            "I prefer all transport arranged for me",
+            "I’m comfortable navigating on my own"
+          ],
+          "Any concerns about long drives, unfamiliar roads, ferries, luggage, or maximum travel time per day?"
+        ],
 
-        ["How adventurous or unfamiliar can the destination feel?", [
-          "Very familiar / easy to navigate", "Mostly comfortable with a little novelty",
-          "Enjoy new languages and customs", "Happy with remote / less touristy places",
-          "Seeking a major cultural adventure", "Depends on travel companion",
-          "Prefer destinations where English is widely spoken or tourist navigation is seamless"
-        ], "Mention language comfort, travel experience, or desire for English-speaking services."],
+        [
+          "How much do you want arranged for you?",
+          [
+            "Fully independent: I plan and book everything myself",
+            "Independent with some guided experiences: local guides or tours for key sights",
+            "Self-guided with support: lodging, transfers and luggage handled; days are mine",
+            "Mostly arranged: hotels, transport and a set itinerary, with some free time",
+            "Private guide or driver: fully arranged, just for my party",
+            "Escorted group tour: fully arranged, with a group",
+            "No strong preference / open to recommendations"
+          ],
+          "Example: How would you like to mix it up (for example, “explore on my own but book guides for historical sites”."
+        ],
 
-        ["Which practical factors are especially important?", [
-          "Low overall cost / strong value", "Easy access to medical care",
-          "Strong preference for low-risk destinations", "Simple entry requirements",
-          "High safety rating / safe for solo/older travelers",
-          "Reliable internet / phone service", "Clean air / low altitude",
-          "Travel sustainability", "None of these stands out"
-        ], "State any absolute requirements. Current entry rules, safety information, and health advice must be checked before booking."]
+        [
+          "How adventurous or unfamiliar can the destination feel?",
+          [
+            "Very familiar: easy to navigate, English widely spoken, well-established tourism",
+            "Mostly comfortable: a little novelty, with good infrastructure and support",
+            "Adventurous: new languages, customs, and less touristy places are appealing",
+            "Very adventurous: remote or off-the-beaten-path places are welcome",
+            "Not sure / open to recommendations"
+          ],
+          "Mention language comfort, travel experience, or desire for English-speaking services."
+        ],
+
+        [
+          "Which practical factors are most important to you?",
+          [
+            "Low overall cost / strong value",
+            "Safety and low-risk destinations",
+            "Easy access to medical care",
+            "Simple entry requirements (visas, paperwork)",
+            "Reliable internet and phone service",
+            "Comfortable weather (avoid extreme heat, cold, or rainy seasons)",
+            "Low altitude",
+            "Fewer crowds / off-peak travel",
+            "Shorter travel time / limited jet lag",
+            "Sustainable travel choices",
+            "None of these stands out"
+          ],
+          "Any absolute requirements? Check current entry rules and health and safety advice before booking."
+        ]
+
       ]],
 
       ["Final priorities", [
-        ["What should we prioritize or avoid when recommending destinations?", [
-          "Best overall fit", "Best value for money", "Most relaxing",
-          "Most culturally enriching", "Most scenic / photogenic", "Most unique / memorable",
-          "Fewest logistical hassles and seamless transitions",
-          "Surprise me with lesser-known places"
-        ], "In the write-in field, list dealbreakers, places already visited, must-see destinations, and your preferred number of recommendations."],
 
-        ["What should we prioritize or avoid when recommending destinations?", [],
-          "Use this final space for any priorities, concerns, or inspiration not already covered above."]
+        [
+          "If you have to make trade-offs, what matters most?",
+          [
+            "Best overall fit",
+            "Best value for money",
+            "Most relaxing",
+            "Most culturally enriching",
+            "Most scenic/ photogenic",
+            "Most unique and memorable",
+            "Fewest crowds / most peaceful",
+            "Fewest logistical hassles",
+            "Most comfort and luxury",
+            "Least travel time",
+            "Surprise me with lesser-known places"
+          ],
+          "Anything else we should weigh, such as which of your top priorities is non-negotiable?"
+        ]
+
       ]]
     ];
 
 
     /*
-     ==========================================================
+     =====================================================
      COMPONENT 2 — TRAVEL RECOMMENDATION INSTRUCTIONS
-     ==========================================================
+     =====================================================
 
-     This is the existing AI prompt used by the website.
+     This text appears at the beginning of the
+     generated AI prompt, before the questionnaire.
 
-     It instructs the AI to:
-       Review the traveler questionnaire
-       Generate a comprehensive prompt
-       Recommend five destinations
-       Explain Best Fit and Trade-offs
-       Provide comprehensive Deep Dives
-       Include photographs
-       Suggest Other Memorable Experiences
-       Provide Sample Daily Itineraries
-       Provide Next Steps
-       Offer five additional destinations when requested
-
-     The recommendation instructions are preserved.
-     ==========================================================
+     Source: November 16, 2026 requirements.
+     =====================================================
     */
 
-    const intro = `Please review and understand all of the questions and answers below. Then generate a comprehensive prompt from that content. Using that comprehensive prompt, develop recommendations for five destinations that best fit the priorities of the traveler.
+    const recommendationInstructions = `Please review and understand all of the questions and answers you have just copied. Then generate a comprehensive prompt from that copied content. Using that comprehensive prompt, develop recommendations for five itineraries that best fit the priorities of the traveler.
 
-For each recommendation, include the following sections with bold headings:
+Best Fit
 
-**Best Fit:** Briefly explain why the destination was recommended and which traveler priorities it best fulfills.
-**Trade-offs:** Explain how this destination compares with the other recommendations.
+For each recommendation, under the bold font heading of 'Best Fit' provide a short explanation of why each choice was recommended, including which traveler's priorities it is best for.
 
-**Deep Dive:** Provide a comprehensive description of what a vacation there would be like, including things to see and do, especially activities matching the traveler’s interests. Show an image of each destination city and each important site identified in the deep dive.
+Trade-offs
 
-**Other Memorable Experiences:** Provide a bulleted list of additional things to see and do at this destination.
-**Sample Daily Itinerary:** Develop an example daily flow for the number of days at this destination.
+For each recommendation, under the bold font heading of 'Trade-offs' indicate how this recommendation compares to the other recommendations.
 
-**Next Steps:** List practical steps for pursuing this destination, including checking airline sites for flights, checking travel sites for hotel choices, asking for hotel recommendations, and any other useful suggestions.
-At the very bottom, include a bold hyperlink labeled “Click here to see five more destination recommendations.” When the traveler requests it, provide five more destinations in this same chat using the same requirements and output guidance. Do not open a new chat. Do not provide them until requested.
+The Deep Dive
 
-After generating the full prompt, run the prompt.
+For each recommendation, under the bold font heading of 'Deep Dive' provide a comprehensive description of what a vacation at this destination would be like, including things to see and what to do, especially those that is of interest to the traveler. Show an image of each destination city and each of the important sites identified in the deep dive.
 
-TRAVELER QUESTIONNAIRE
-`;
+Other Memorable Experiences
+
+For each recommendation, under the bold font heading of 'Other Memorable Experiences' provide a bulleted list of additional things to do and see at this destination.
+
+Daily Sample Itinerary
+
+For each recommendation, under the bold font heading of 'Sample Daily Itinerary' develop an example of what a daily flow might look like for the number of days in that destination. Specify that the sample itinerary should cover the entire requested vacation duration and reflect the preferred pace, transportation, and number of overnight bases.
+
+Next Steps
+
+For each recommendation, under the bold font heading of 'Next Steps' please list various things the traveler should do next if they want to pursue this recommendation. Consistently include practical planning guidance for flights, accommodations, transportation, attraction reservations, tours, and other relevant considerations.
+
+Need More Destination Recommendations?
+
+At the very bottom of your output, have a bold font hyperlink saying: 'Click here to see five more recommended itineraries.' When the traveler clicks on this link, within the same chat, please produce five more recommended itineraries using all of the requirements of the first five itineraries, including the output guidance above. Do not open a new chat. Do not produce these recommendations until the traveler clicks on the hyperlink. After running the second set of five recommended itineraries, in your output please remove the hyperlink saying: 'Click here to see five more recommended itineraries.'
+
+Run the Prompt
+
+After generating the full prompt, please run the prompt.`;
 
 
     /*
-     ==========================================================
-     COMPONENT 3 — RESULTS PRESENTATION AND WEBSITE LOGIC
-     ==========================================================
+     =====================================================
+     COMPONENT 3 — RESULTS PRESENTATION
+     =====================================================
 
-     Creates the questionnaire display.
-     Handles summary generation.
-     Copies the generated prompt.
-     Clears questionnaire answers.
-     Controls the image slideshow.
+     Display questionnaire.
+     Generate complete prompt.
+     Copy complete prompt.
+     Clear all answers.
+     Run slideshow.
 
-     The current copy/paste workflow is preserved.
-     ==========================================================
+     The generated prompt contains:
+
+       1. Complete Component 2 instructions
+       2. All 28 numbered questions and answers
+
+     =====================================================
     */
 
-    // Display the questionnaire.
 
-    let number = 0;
-    const questions = document.querySelector('#questions');
+    // Build the questionnaire.
 
-    sections.forEach(([title, items]) => {
+    const questionsContainer =
+      document.querySelector('#questions');
+
+    let questionNumber = 0;
+
+    sections.forEach(([sectionTitle, items]) => {
+
       const heading = document.createElement('h2');
       heading.className = 'section-title';
-      heading.textContent = title;
-      questions.append(heading);
+      heading.textContent = sectionTitle;
+
+      questionsContainer.append(heading);
 
       items.forEach(([question, options, note]) => {
-        number++;
+
+        questionNumber++;
 
         const group = document.createElement('div');
         group.className = 'question-group';
-        group.dataset.question = number;
+        group.dataset.question = questionNumber;
 
-        const choices = options.map(option =>
-          `<label class="option-pill"><input type="checkbox" value="${option}"><span>${option}</span></label>`
-        ).join('');
+        const title = document.createElement('p');
+        title.className = 'question-title';
+        title.textContent =
+          `(${questionNumber}) ${question}`;
 
-        group.innerHTML = `
-          <p class="question-title">(${number}) ${question}</p>
-          ${options.length ? `<div class="options">${choices}</div>` : ''}
-          <textarea class="freeform-input ${number === 1 ? 'opening-description-input' : ''}"
-            rows="${number === 1 ? 4 : 2}"
-            placeholder="Optional write-in: add any details that matter to you."></textarea>
-          <p class="question-note">${note}</p>
-        `;
+        group.append(title);
 
-        questions.append(group);
+        if (options.length > 0) {
+
+          const choices = document.createElement('div');
+          choices.className = 'options';
+
+          options.forEach(option => {
+
+            const label = document.createElement('label');
+            label.className = 'option-pill';
+
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.value = option;
+
+            const caption = document.createElement('span');
+            caption.textContent = option;
+
+            label.append(checkbox, caption);
+            choices.append(label);
+
+          });
+
+          group.append(choices);
+        }
+
+        const writeIn = document.createElement('textarea');
+
+        writeIn.className =
+          'freeform-input' +
+          (questionNumber === 1
+            ? ' opening-description-input'
+            : '');
+
+        writeIn.rows = questionNumber === 1 ? 4 : 2;
+
+        writeIn.placeholder =
+          questionNumber === 1
+            ? 'Your description of your ideal vacation...'
+            : 'Optional write-in: add any details that matter to you.';
+
+        const helper = document.createElement('p');
+        helper.className = 'question-note';
+        helper.textContent = note;
+
+        group.append(writeIn, helper);
+
+        questionsContainer.append(group);
+
       });
     });
 
 
-    // Generate Summary for AI Prompt.
-    // The summary includes all 29 questions and their answers,
-    // preceded by the recommendation instructions.
+    // Generate the full AI prompt.
 
-    document.querySelector('#generate').addEventListener('click', () => {
-      let text = intro;
+    const output =
+      document.querySelector('#summary-output');
 
-      document.querySelectorAll('.question-group').forEach(group => {
-        const question = group.querySelector('.question-title').textContent;
-        const picks = [...group.querySelectorAll('input:checked')].map(input => input.value);
-        const written = group.querySelector('textarea').value.trim();
+    document.querySelector('#generate')
+      .addEventListener('click', () => {
 
-        const answer = [...picks, written].filter(Boolean).join('; ') || 'No answer provided';
+        let summary = recommendationInstructions;
 
-        text += `\n${question}\nAnswer: ${answer}\n`;
+        summary += '\n\n';
+        summary += 'TRAVELER QUESTIONNAIRE';
+        summary += '\n';
+
+        document.querySelectorAll('.question-group')
+          .forEach(group => {
+
+            const question =
+              group.querySelector('.question-title')
+                .textContent;
+
+            const selectedOptions = [
+              ...group.querySelectorAll('input:checked')
+            ].map(input => input.value);
+
+            const writtenAnswer =
+              group.querySelector('textarea')
+                .value.trim();
+
+            const answers = [
+              ...selectedOptions,
+              writtenAnswer
+            ].filter(Boolean);
+
+            const answer = answers.length
+              ? answers.join('; ')
+              : 'No answer provided';
+
+            summary += '\n';
+            summary += question;
+            summary += '\n';
+            summary += `Answer: ${answer}`;
+            summary += '\n';
+
+          });
+
+        output.value = summary;
+
+        output.scrollIntoView({
+          behavior: 'smooth',
+          block: 'center'
+        });
+
       });
-
-      document.querySelector('#summary-output').value = text;
-
-      document.querySelector('#summary-output').scrollIntoView({
-        behavior: 'smooth',
-        block: 'center'
-      });
-    });
 
 
     // Copy Summary Contents.
-    // Copies the complete AI prompt and questionnaire answers.
 
-    document.querySelector('#copy').addEventListener('click', async () => {
-      const output = document.querySelector('#summary-output');
+    document.querySelector('#copy')
+      .addEventListener('click', async () => {
 
-      if (!output.value.trim()) return;
+        if (!output.value.trim()) {
+          return;
+        }
 
-      await navigator.clipboard.writeText(output.value);
+        const button =
+          document.querySelector('#copy');
 
-      const button = document.querySelector('#copy');
-      const oldText = button.textContent;
+        try {
 
-      button.textContent = 'Copied!';
+          await navigator.clipboard.writeText(
+            output.value
+          );
 
-      setTimeout(() => button.textContent = oldText, 1600);
-    });
+        } catch (error) {
+
+          output.focus();
+          output.select();
+
+          try {
+
+            if (!document.execCommand('copy')) {
+              throw new Error(
+                'Copy was not successful'
+              );
+            }
+
+          } catch (fallbackError) {
+
+            window.alert(
+              'Automatic copying was unavailable. ' +
+              'Select the summary text and copy it manually.'
+            );
+
+            return;
+          }
+        }
+
+        const oldText = button.textContent;
+
+        button.textContent = 'Copied!';
+
+        setTimeout(() => {
+          button.textContent = oldText;
+        }, 1600);
+
+      });
 
 
-    // Clear All Answers.
-    // Clears selected options, write-ins, and summary text.
+    // Clear all questionnaire answers.
 
-    document.querySelector('#clear').addEventListener('click', () => {
-      document.querySelectorAll('input').forEach(input => input.checked = false);
-      document.querySelectorAll('textarea').forEach(textarea => textarea.value = '');
-    });
+    document.querySelector('#clear')
+      .addEventListener('click', () => {
+
+        document.querySelectorAll(
+          '.question-group input'
+        ).forEach(input => {
+          input.checked = false;
+        });
+
+        document.querySelectorAll('textarea')
+          .forEach(textarea => {
+            textarea.value = '';
+          });
+
+      });
 
 
-    // Slideshow presentation.
-    // Retains the existing order, timing, and transitions.
+    // Slideshow: preserve existing image order.
 
-    const slides = [...document.querySelectorAll('.hero-image')];
+    const slides = [
+      ...document.querySelectorAll('.hero-image')
+    ];
+
     let active = 0;
     let transitions = 0;
 
-    const slideshow = setInterval(() => {
-      slides[active].classList.remove('is-active');
+    if (slides.length > 1) {
 
-      active = (active + 1) % slides.length;
+      const slideshowTimer = setInterval(() => {
 
-      slides[active].classList.add('is-active');
+        slides[active].classList.remove('is-active');
 
-      transitions++;
+        active = (active + 1) % slides.length;
 
-      if (transitions >= slides.length * 2) {
-        clearInterval(slideshow);
-      }
-    }, 3500);
+        slides[active].classList.add('is-active');
+
+        transitions++;
+
+        if (transitions >= slides.length * 2) {
+          clearInterval(slideshowTimer);
+        }
+
+      }, 3500);
+
+    }
 
   </script>
 </body>
